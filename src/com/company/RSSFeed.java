@@ -33,7 +33,8 @@ public class RSSFeed
 
         this.initialize();
 
-        this.rssItemList = collectFeedItems();      // Collect feedItems for the first time
+        this.rssItemList = collectFeedItems();              // Collect feedItems for the first time
+        this.print();
     }
 
     private void initialize()
@@ -77,9 +78,15 @@ public class RSSFeed
         return feedItems;
     }
 
+    public void print() // Print to show what we have
+    {
+        System.out.println(this);
+        this.rssItemList.forEach(System.out::println);
+    }
+
     @Override
     public String toString()
     {
-        return "RSSFeed: " + this.url;
+        return "RSSFeed: " + this.url + "\n------------------------------------";
     }
 }
